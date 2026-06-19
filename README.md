@@ -1,5 +1,5 @@
 # Larynx segmentation for mid-sagittal speech production real-time MRI
-<video src="inference_examples/videos_with_masks/lary_seg_demo.mp4" width="512" controls muted loop autoplay></video>
+<video src="https://github.com/pkuzyb/larynx_segmentation.git/inference_examples/videos_with_masks/lary_seg_demo.mp4" width="512" controls muted loop autoplay></video>
 
 This repository contains data, checkpoints, and code for larynx segmentation in mid-sagittal real-time speech production MRI.
 
