@@ -12,7 +12,7 @@ This repository contains data, checkpoints, and code for larynx segmentation in 
 The dataset consists of JPG-format rt-MRI frames and JSON-format segmentation annotations organized as follows:
 
 ```text
-data/
+./data/
 ├── train/              # Training set
 ├── eval/               # Validation set
 ├── test/               # Test set for final evaluation
@@ -27,8 +27,13 @@ data/
 The setup script installs required dependencies, including Detectron2.
 
 ```bash
-chmod +x setup_env.sh
-./setup_env.sh
+chmod +x ./scripts/setup_env.sh
+./scripts/setup_env.sh
+```
+The Mask2Former model is in:
+
+```text
+./Mask2Former
 ```
 
 ---
@@ -38,13 +43,13 @@ chmod +x setup_env.sh
 Train Mask2Former models:
 
 ```bash
-python scripts/train_maskformer.py
+python ./scripts/train_maskformer.py
 ```
 
 Train teacher-student semi-supervised learning models:
 
 ```bash
-python scripts/train_ssl.py
+python ./scripts/train_ssl.py
 ```
 
 ---
@@ -52,7 +57,7 @@ python scripts/train_ssl.py
 Checkpoints trained using 25% and 100% of the labeled training data are provided in:
 
 ```text
-models/
+./models/
 ├── supervised_model_train25.pth
 ├── supervised_model_train100.pth
 ├── semisupervised_model_train25.pth
