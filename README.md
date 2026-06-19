@@ -5,7 +5,11 @@ This repository contains data, checkpoints, and code for larynx segmentation in 
 ---
 
 ## Dataset
-The dataset consists of JPG-format MRI frames and corresponding JSON-format segmentation annotations.
+The dataset consists of JPG-format MRI frames and corresponding JSON-format segmentation annotations:
+
+```text
+./data
+```
 
 ---
 
@@ -38,10 +42,15 @@ python scripts/train_ssl.py
 ## Inference
 Pretrained checkpoints for both supervised and semi-supervised models trained under 25% and 100% labeled-data conditions: hrl
 
-Sample videos and predicted segmentation masksare avaiable: hrl 
+To make inferences on new MRI frames:
 
 ```bash
 python inference.py
+```
+Sample videos and predicted segmentation masks are avaiable in:
+```text
+./inference_examples/videos
+./inference_examples/masks
 ```
 
 ---
