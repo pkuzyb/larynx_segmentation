@@ -48,15 +48,23 @@ python scripts/train_ssl.py
 ```
 
 ---
-## Inference
-Pretrained checkpoints for both supervised and semi-supervised models trained under 25% and 100% labeled-data conditions:
+## Models
+Checkpoints trained using 25% and 100% of the labeled training data are provided in:
+
 ```text
-./models/
+models/
+├── supervised_model_train25.pth
+├── supervised_model_train100.pth
+├── semisupervised_model_train25.pth
+└── semisupervised_model_train100.pth
 ```
+
+---
+## Inference
 To make inferences on new MRI frames:
 
 ```bash
-python inference.py
+python ./scripts/inference.py
 ```
 Sample videos and predicted segmentation masks:
 ```text
