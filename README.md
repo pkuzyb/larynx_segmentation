@@ -67,7 +67,3 @@ If you use this repository in your research, please cite:
 ```
 
 ---
-
-## License
-
-This repository is released for research and educational purposes.
