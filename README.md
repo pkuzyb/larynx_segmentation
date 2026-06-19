@@ -6,6 +6,7 @@ This repository contains data, checkpoints, and code for larynx segmentation in 
 
 ## Dataset
 The dataset consists of JPG-format MRI frames and corresponding JSON-format segmentation annotations.
+
 ---
 
 ## Environment Setup
@@ -32,8 +33,6 @@ Train teacher-student semi-supervised learning models:
 ```bash
 python scripts/train_ssl.py
 ```
-
----
 
 ---
 ## Inference
