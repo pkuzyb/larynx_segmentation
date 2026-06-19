@@ -52,7 +52,7 @@ If you use this repository in your research, please cite:
 ```bibtex
 @inproceedings{zhang2026larynx,
   author    = {Zhang et al.},
-  title     = {Larynx segmentation in mid-sagittal speech production real-Time MRI},
+  title     = {Larynx segmentation in mid-sagittal speech production real-time MRI},
   booktitle = {Proceedings of Interspeech},
   year      = {2026}
 }
