@@ -1,4 +1,4 @@
-# Larynx segmentation for mid-sagittal speech production real-time tpeech MRI
+# Larynx segmentation for mid-sagittal speech production real-time MRI
 
 This repository contains data, checkpoints, and code for larynx segmentation in mid-sagittal real-time speech production MRI.
 
