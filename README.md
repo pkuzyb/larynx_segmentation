@@ -13,14 +13,13 @@ The dataset consists of JPG-format MRI frames and corresponding JSON-format segm
 
 ---
 
-## Environment Setup
+## Setup
+The setup script installs required dependencies, including Detectron2.
 
 ```bash
 chmod +x setup_env.sh
 ./setup_env.sh
 ```
-
-The setup script installs required dependencies, including Detectron2.
 
 ---
 
