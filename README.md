@@ -91,5 +91,5 @@ If you use this repository in your research, please cite:
   year      = {2026}
 }
 ```
-
+[![DOI](https://zenodo.org/badge/1273795365.svg)](https://doi.org/10.5281/zenodo.20767832)
 ---
