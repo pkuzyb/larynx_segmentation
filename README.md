@@ -25,7 +25,7 @@ chmod +x setup_env.sh
 
 ## Training
 
-Train Mask2Former models using the annotated data:
+Train Mask2Former models:
 
 ```bash
 python scripts/train_maskformer.py
@@ -39,7 +39,7 @@ python scripts/train_ssl.py
 
 ---
 ## Inference
-Pretrained checkpoints for both supervised and semi-supervised models trained under 25% and 100% labeled-data conditions: hrl
+Pretrained checkpoints for both supervised and semi-supervised models trained under 25% and 100% labeled-data conditions:
 ```text
 ./models/
 ```
@@ -48,7 +48,7 @@ To make inferences on new MRI frames:
 ```bash
 python inference.py
 ```
-Sample videos and predicted segmentation masks are avaiable in:
+Sample videos and predicted segmentation masks:
 ```text
 ./inference_examples/videos
 ./inference_examples/masks
