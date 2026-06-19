@@ -36,9 +36,9 @@ python scripts/train_ssl.py
 
 ---
 ## Inference
-Pretrained checkpoints for both supervised and semi-supervised models trained under 25% and 100% labeled-data conditions are available in:
-Sample videos are avaiable in: 
-Generate segmentation masks for new MRI videos:
+Pretrained checkpoints for both supervised and semi-supervised models trained under 25% and 100% labeled-data conditions: hrl
+
+Sample videos and predicted segmentation masksare avaiable: hrl 
 
 ```bash
 python inference.py
