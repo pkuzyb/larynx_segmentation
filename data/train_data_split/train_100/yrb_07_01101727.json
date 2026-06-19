@@ -1,0 +1,218 @@
+{
+  "version": "5.6.0a0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "vocal_folds",
+      "points": [
+        [
+          54.42424242424242,
+          91.63636363636363
+        ],
+        [
+          56.24242424242424,
+          91.51515151515152
+        ],
+        [
+          57.57575757575758,
+          90.78787878787878
+        ],
+        [
+          59.515151515151516,
+          90.18181818181817
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "thyroid_cartilage",
+      "points": [
+        [
+          50.54545454545455,
+          88.36363636363636
+        ],
+        [
+          51.03030303030303,
+          90.9090909090909
+        ],
+        [
+          51.63636363636363,
+          92.96969696969697
+        ],
+        [
+          54.06060606060606,
+          92.36363636363636
+        ],
+        [
+          53.21212121212121,
+          89.69696969696969
+        ],
+        [
+          52.36363636363636,
+          87.75757575757575
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "ventricle",
+      "points": [
+        [
+          54.18181818181818,
+          89.81818181818181
+        ],
+        [
+          55.15151515151515,
+          89.0909090909091
+        ],
+        [
+          54.303030303030305,
+          88.96969696969697
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "arytenoid_cartilage",
+      "points": [
+        [
+          62.78787878787879,
+          82.66666666666666
+        ],
+        [
+          61.090909090909086,
+          82.06060606060606
+        ],
+        [
+          59.39393939393939,
+          81.33333333333333
+        ],
+        [
+          57.333333333333336,
+          84.60606060606061
+        ],
+        [
+          56.72727272727273,
+          86.9090909090909
+        ],
+        [
+          55.878787878787875,
+          89.33333333333333
+        ],
+        [
+          60.12121212121212,
+          90.06060606060606
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "epiglottis",
+      "points": [
+        [
+          52.96969696969697,
+          87.75757575757575
+        ],
+        [
+          55.15151515151515,
+          85.2121212121212
+        ],
+        [
+          56.36363636363636,
+          81.69696969696969
+        ],
+        [
+          56.0,
+          79.03030303030303
+        ],
+        [
+          56.848484848484844,
+          75.15151515151514
+        ],
+        [
+          57.93939393939394,
+          71.75757575757575
+        ],
+        [
+          57.81818181818182,
+          70.42424242424242
+        ],
+        [
+          56.24242424242424,
+          70.3030303030303
+        ],
+        [
+          56.0,
+          73.33333333333333
+        ],
+        [
+          54.90909090909091,
+          76.0
+        ],
+        [
+          53.696969696969695,
+          77.93939393939394
+        ],
+        [
+          52.24242424242424,
+          78.54545454545455
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "ventricular_folds",
+      "points": [
+        [
+          53.45454545454545,
+          87.51515151515152
+        ],
+        [
+          54.78787878787879,
+          86.78787878787878
+        ],
+        [
+          54.78787878787879,
+          85.57575757575758
+        ],
+        [
+          56.12121212121212,
+          85.33333333333333
+        ],
+        [
+          56.12121212121212,
+          87.15151515151514
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "yrb_07_01101727.jpg",
+  "imageData": "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",
+  "imageHeight": 104,
+  "imageWidth": 104
+}

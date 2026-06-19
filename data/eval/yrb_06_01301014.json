@@ -1,0 +1,254 @@
+{
+  "version": "5.6.0a0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "thyroid_cartilage",
+      "points": [
+        [
+          59.9375,
+          67.625
+        ],
+        [
+          60.8125,
+          69.25
+        ],
+        [
+          61.4375,
+          71.75
+        ],
+        [
+          63.5625,
+          71.0
+        ],
+        [
+          62.6875,
+          69.0
+        ],
+        [
+          61.6875,
+          66.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "ventricle",
+      "points": [
+        [
+          62.5625,
+          66.0
+        ],
+        [
+          63.0625,
+          66.625
+        ],
+        [
+          64.0625,
+          66.625
+        ],
+        [
+          65.0625,
+          66.375
+        ],
+        [
+          65.4375,
+          65.75
+        ],
+        [
+          64.5625,
+          65.625
+        ],
+        [
+          63.1875,
+          65.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "vocal_folds",
+      "points": [
+        [
+          62.9375,
+          69.125
+        ],
+        [
+          64.6875,
+          68.875
+        ],
+        [
+          66.5625,
+          68.25
+        ],
+        [
+          67.6875,
+          67.625
+        ],
+        [
+          69.3125,
+          66.5
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "arytenoid_cartilage",
+      "points": [
+        [
+          68.4375,
+          57.0
+        ],
+        [
+          68.8125,
+          58.5
+        ],
+        [
+          68.0625,
+          59.25
+        ],
+        [
+          66.4375,
+          59.0
+        ],
+        [
+          65.8125,
+          61.0
+        ],
+        [
+          65.3125,
+          63.25
+        ],
+        [
+          66.0625,
+          65.0
+        ],
+        [
+          67.3125,
+          66.25
+        ],
+        [
+          68.3125,
+          66.25
+        ],
+        [
+          69.8125,
+          66.375
+        ],
+        [
+          69.9375,
+          67.875
+        ],
+        [
+          69.9375,
+          69.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "epiglottis",
+      "points": [
+        [
+          61.8125,
+          65.875
+        ],
+        [
+          62.9375,
+          64.5
+        ],
+        [
+          64.0625,
+          62.0
+        ],
+        [
+          64.0625,
+          59.625
+        ],
+        [
+          64.0625,
+          56.875
+        ],
+        [
+          64.0625,
+          54.875
+        ],
+        [
+          64.0625,
+          53.875
+        ],
+        [
+          64.0625,
+          52.125
+        ],
+        [
+          63.5625,
+          50.125
+        ],
+        [
+          62.1875,
+          49.25
+        ],
+        [
+          62.1875,
+          50.25
+        ],
+        [
+          62.1875,
+          51.25
+        ],
+        [
+          61.9375,
+          53.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "ventricular_folds",
+      "points": [
+        [
+          63.8125,
+          63.0
+        ],
+        [
+          64.1875,
+          63.0
+        ],
+        [
+          65.1875,
+          63.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "yrb_06_01301014.jpg",
+  "imageData": "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",
+  "imageHeight": 104,
+  "imageWidth": 104
+}
