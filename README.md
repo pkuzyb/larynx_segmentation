@@ -51,7 +51,7 @@ If you use this repository in your research, please cite:
 
 ```bibtex
 @inproceedings{zhang2026larynx,
-  author    = {Zhang, Yubin and others},
+  author    = {Zhang et al.},
   title     = {Larynx segmentation in mid-sagittal speech production real-Time MRI},
   booktitle = {Proceedings of Interspeech},
   year      = {2026}
