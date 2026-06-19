@@ -54,8 +54,9 @@ python inference.py
 ```
 Sample videos and predicted segmentation masks:
 ```text
-./inference_examples/videos
-./inference_examples/masks
+./inference/videos
+./inference/masks
+./inference/videos_with_masks
 ```
 
 ---
