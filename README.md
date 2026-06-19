@@ -40,7 +40,9 @@ python scripts/train_ssl.py
 ---
 ## Inference
 Pretrained checkpoints for both supervised and semi-supervised models trained under 25% and 100% labeled-data conditions: hrl
-
+```text
+./models/
+```
 To make inferences on new MRI frames:
 
 ```bash
