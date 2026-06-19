@@ -9,10 +9,15 @@ This repository contains data, checkpoints, and code for larynx segmentation in 
 ---
 
 ## Dataset
-The dataset consists of JPG-format MRI frames and corresponding JSON-format segmentation annotations:
+The dataset consists of JPG-format rt-MRI frames and corresponding JSON-format segmentation annotations organized as follows:
 
 ```text
-./data
+data/
+├── train/              # Labeled training images and annotations
+├── eval/               # Validation set used for model selection
+├── test/               # Held-out test set for final evaluation
+├── train_data_split/   # Labeled-data subsets generated from one random sampling seed (1%, 2.5%, 5%, 7.5%, 10%, 25%, 50%, 75%, and 100% labeled data)
+└── unlabelled/         # Unannotated rt-MRI frames used for semi-supervised learning
 ```
 
 ---
