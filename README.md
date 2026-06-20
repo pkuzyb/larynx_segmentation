@@ -71,7 +71,7 @@ To make inferences on new MRI frames:
 ```bash
 python ./scripts/inference.py
 ```
-Sample videos and predicted segmentation masks:
+Sample real-time MRI videos and predicted segmentation masks:
 ```text
 ./inference/videos
 ./inference/masks
