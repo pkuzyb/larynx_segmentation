@@ -40,7 +40,7 @@ The Mask2Former model: ([facebookresearch/Mask2Former](https://github.com/facebo
 
 ## Training
 
-Train Mask2Former fully supervised models:
+Train fully supervised larynx segmentation models:
 
 ```bash
 python ./scripts/train_maskformer.py
