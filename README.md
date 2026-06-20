@@ -30,7 +30,7 @@ The setup script installs required dependencies, including Detectron2.
 chmod +x ./scripts/setup_env.sh
 ./scripts/setup_env.sh
 ```
-The Mask2Former model is in:
+The Mask2Former model: ([facebookresearch/Mask2Former](https://github.com/facebookresearch/Mask2Former))
 
 ```text
 ./Mask2Former
@@ -40,7 +40,7 @@ The Mask2Former model is in:
 
 ## Training
 
-Train Mask2Former models:
+Train Mask2Former fully supervised models:
 
 ```bash
 python ./scripts/train_maskformer.py
