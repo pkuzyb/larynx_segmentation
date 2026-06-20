@@ -588,7 +588,7 @@ for cond in conditions:
         DetectionCheckpointer(trainer.model).load(best_model_path)
     else:
         print("Warning: best_ssl_model.pth not found, using final weights instead.")
-        
+
     # -----------------------------
     # Evaluation
     # -----------------------------
@@ -641,7 +641,7 @@ for cond in conditions:
                 f"AP: {mean_ap:.2f}, All6 Rate: {all6_rate:.4f}\n")
 
 # -----------------------------
-# SAVE ALL SSL METRICS
+# SAVE SSL METRICS
 # -----------------------------
 metrics_dict = {
     "conditions": conditions,
