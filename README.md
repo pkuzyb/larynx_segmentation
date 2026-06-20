@@ -66,7 +66,7 @@ Checkpoints trained using 25% and 100% of the labeled training data are provided
 
 ---
 ## Inference
-To make inferences on new MRI frames:
+To make inferences on new real-time MRI videos:
 
 ```bash
 python ./scripts/inference.py
