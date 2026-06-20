@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 from pycocotools import mask as mask_util
 import copy
 import random
-from tabulate import tabulate # For a clean results table
+from tabulate import tabulate 
 import torch.nn.functional as F
 import shutil
 import sys
 from medpy import metric
 
-from dataset import Mask2FormerDataset  # your dataset.py
+from dataset import Mask2FormerDataset 
 
 from detectron2.config import get_cfg
 from mask2former import add_maskformer2_config
@@ -104,7 +104,7 @@ def create_reduced_dataset(original_folder, target_folder, reduction_ratio, seed
     print(f"Tracking JSON saved to: {record_json}")
 
 def get_lary_dicts(json_folder):
-    ## the annotations are rescaled to 1024 using the dataset function
+    ## the annotations are rescaled to 1024 using the dataset function here
     dataset = Mask2FormerDataset(json_folder,resize_to=1024)
     records = []
     for record in dataset:
@@ -122,7 +122,7 @@ def mapper(dataset_dict, is_strong=False):
     # Load image 
     image = utils.read_image(dataset_dict["file_name"], format="BGR")
     
-    # The images are rescaled to 1024 here
+    # The images are rescaled to 1024 here (not in the dataset function)
     h, w = dataset_dict["height"], dataset_dict["width"]
     image = cv2.resize(image, (w, h), interpolation=cv2.INTER_LINEAR)
     
@@ -198,7 +198,8 @@ class ValidationLossHook(hooks.HookBase):
         if avg_val_loss < self.best_val_loss:
             self.best_val_loss = avg_val_loss
             self.no_improve_count = 0
-            # Save best model
+
+            # Save the best model
             if self.checkpointer:
                 self.checkpointer.save("best_model")
         else:
@@ -273,7 +274,7 @@ class TrainerWithEarlyStopping(DefaultTrainer):
 
 
 # ---  Metrics ---#
-### only dice nad ap is reported in the paper###
+### only DICE and mAP are reported in the paper###
 def calculate_advanced_metrics(model, data_loader, coco_results, num_classes=6):
     model.eval()
     stats = {i: {"dice": [], "iou": [], "hd95": [], "rel_hd95": [], "detected": 0} for i in range(num_classes)}
@@ -305,6 +306,7 @@ def calculate_advanced_metrics(model, data_loader, coco_results, num_classes=6):
 
                 gt_instances = input_data["instances"].to("cpu")
                 for class_id in range(num_classes):
+
                     # --- Ground Truth Mask ---
                     gt_mask_np = np.zeros(target_size, dtype=bool)
                     idx_gt = gt_instances.gt_classes == class_id
@@ -443,7 +445,6 @@ cfg.DATASETS.TEST = ("lary_val",)
 cfg.MODEL.MASK_FORMER.NUM_CLASSES = len(thing_classes)
 cfg.MODEL.SEM_SEG_HEAD.NUM_CLASSES = len(thing_classes)
 
-
 # pretrained weights (official Mask2Former URL)
 cfg.MODEL.WEIGHTS = "./Mask2Former/model_final_3c8ec9.pkl"
 
@@ -469,16 +470,16 @@ conditions = [0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1.0]
 dice_means, iou_means, rhd95_means, ap_means, det_rate = [], [], [], [], []
 
 for cond in conditions:
-    # Set folder paths based on condition
+    # Set folder paths based on conditions
     percentage = int(cond * 100)
-    train_folder_r = f"./lary_seg/data/train_0614/train_{percentage}"
+    train_folder_r = f"./data/train_0614/train_{percentage}"
     dataset_name = f"lary_train_{percentage}"
     output_dir = f"./mask2former_output_0614/train_{percentage}"
 
     os.makedirs(output_dir, exist_ok=True)
     json_path = os.path.join(output_dir, "reduced_dataset.json")
     create_reduced_dataset(
-        original_folder="./lary_seg/data/train",
+        original_folder="./data/train",
         target_folder=train_folder_r,
         reduction_ratio=cond,
         seed=100,
@@ -503,7 +504,8 @@ for cond in conditions:
 
     # ---------- Load Best Weights ----------
     print("--- Loading Supervised Model Weights for Evaluation ---")
-    ### final_model is used here as it has much better performance, especially for low-data regimes ###
+
+    #final_model is used here as it has much better performance, especially for low-data regimes. Istead, calculate dice loss to obtain similar results
     best_model_path = os.path.join(cfg.OUTPUT_DIR, "final_model.pth") 
     
     if os.path.exists(best_model_path):

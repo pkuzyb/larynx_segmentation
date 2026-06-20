@@ -54,12 +54,12 @@ def get_unlabeled_dicts(img_folder):
 # -----------------------------
 def mapper(dataset_dict, is_strong=False):
     """
-    Loads and resizes images to 1024x1024.
+    Loads and resizes images to 1024x1024 (done here not in dataset.py).
     Utilizes pre-rasterized smooth 1024 masks from dataset.py.
     """
     dataset_dict = copy.deepcopy(dataset_dict)
     
-    # 1. Read Raw Image (Matches physics of original MRI resolution)
+    # 1. Read Raw Image 
     image_raw = utils.read_image(dataset_dict["file_name"], format="BGR")
     orig_h, orig_w = image_raw.shape[:2]
 
@@ -75,14 +75,14 @@ def mapper(dataset_dict, is_strong=False):
     if is_strong:
         img = image_weak.copy()
         
-        # --- Rician Noise (Simulating MRI acquisition grain) ---
+        # --- Rician Noise (simulating MRI acquisition grain) ---
         if np.random.rand() > 0.5:
             sigma = np.random.uniform(25, 35) 
             noise_real = np.random.normal(0, sigma, img.shape)
             noise_imag = np.random.normal(0, sigma, img.shape)
             img = np.sqrt((img + noise_real)**2 + noise_imag**2).astype(np.float32)
 
-        # --- Gaussian Blur (Softening fine vocal fold edges) ---
+        # --- Gaussian Blur (softening the edges) ---
         if np.random.rand() > 0.5:
             img = cv2.GaussianBlur(img, (7, 7), 0)
 
@@ -94,15 +94,15 @@ def mapper(dataset_dict, is_strong=False):
     # Store image_weak for the Teacher (Pseudo-label generation)
     dataset_dict["image_weak"] = torch.from_numpy(image_weak.transpose(2, 0, 1))
 
-    # 4. Process Ground Truth (Already 1024-scale from dataset.py)
+    # Process ground truth (Already 1024-scale from dataset.py)
     annos = [obj for obj in dataset_dict.pop("annotations", []) if obj.get("iscrowd", 0) == 0]
     masks, boxes, classes = [], [], []
 
     for ann in annos:
-        #  This mask is already 1024. Do not cv2.resize it.
+        #  The masks are already 1024. Do not cv2.resize it.
         mask = mask_util.decode(ann["segmentation"]).astype(np.uint8)
         
-        # Also, Bbox is already scaled in dataset.py; convert xywh -> xyxy
+        # Also, Bbox is already scaled in dataset.py
         x0, y0, w_b, h_b = ann["bbox"]
         bbox = [x0, y0, x0 + w_b, y0 + h_b]
         
@@ -178,7 +178,7 @@ class SSLValidationLossHook(hooks.HookBase):
         storage = get_event_storage()
         storage.put_scalar("val_loss", avg_val_loss)
 
-        # Get the latest PL count from storage
+        # Get the latest pseudo-label count from storage
         pl_count = storage.history("num_pseudo_labels").latest() if "num_pseudo_labels" in storage.histories() else 0
 
         # Retrieve Training Losses and PL Count from storage
@@ -193,7 +193,7 @@ class SSLValidationLossHook(hooks.HookBase):
         print(f"EVAL:  Total Val Loss: {avg_val_loss:.4f} (Best: {self.best_val_loss:.4f})")
         print("="*80)
 
-        # --- TEACHER STARVATION CHECK ---
+        # Teacher Starvation Check
         # If the Teacher found 0 labels in this batch
         if pl_count == 0:
             self.zero_pl_streak += 1
@@ -224,11 +224,11 @@ class SSLTrainer(DefaultTrainer):
     def __init__(self, cfg):
         self.device = torch.device(cfg.MODEL.DEVICE)
         
-        # 1. Setup Teacher Model
+        # Setup Teacher Model
         self.teacher_model = build_model(cfg)
         self.teacher_model.to(self.device)
         
-        # 2. Setup Unlabeled Data Loader
+        # Setup Unlabeled Data Loader
         unlabeled_dicts = get_unlabeled_dicts(unlabeled_dir)
         print(f"SSLTrainer: Initialized with {len(unlabeled_dicts)} unlabeled records.")
         
@@ -302,7 +302,7 @@ class SSLTrainer(DefaultTrainer):
         # -----------------------------------------------------------
         valid_unlabeled_batch = []
         
-        #number of pseudo labels
+        # Number of pseudo labels
         num_pl = 0
         max_batch_score = 0.0
         pred_class_names_batch = [] 
@@ -313,11 +313,11 @@ class SSLTrainer(DefaultTrainer):
             if len(inst) > 0:
                 max_batch_score = max(max_batch_score, inst.scores.max().item())
 
-            # --- Threshold check ---
+            # Threshold check 
             keep = inst.scores > 0.85
             filtered_inst = inst[keep].to(self.device)
 
-            # --- Map filtered classes to names ---
+            # Map filtered classes to names 
             if len(filtered_inst) > 0:
                 pred_class_ids = filtered_inst.pred_classes.tolist()
                 metadata = MetadataCatalog.get(self.cfg.DATASETS.TRAIN[0])
@@ -414,6 +414,7 @@ def calculate_advanced_metrics(model, data_loader, coco_results, num_classes=6):
 
                 gt_instances = input_data["instances"].to("cpu")
                 for class_id in range(num_classes):
+
                     # --- Ground Truth Mask ---
                     gt_mask_np = np.zeros(target_size, dtype=bool)
                     idx_gt = gt_instances.gt_classes == class_id
@@ -527,6 +528,7 @@ os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 # CONDITIONS
 # -----------------------------
 conditions = [0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1.0]
+
 # -----------------------------
 # Initialize metric lists
 # -----------------------------
@@ -586,6 +588,7 @@ for cond in conditions:
         DetectionCheckpointer(trainer.model).load(best_model_path)
     else:
         print("Warning: best_ssl_model.pth not found, using final weights instead.")
+        
     # -----------------------------
     # Evaluation
     # -----------------------------

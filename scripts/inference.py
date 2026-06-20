@@ -11,7 +11,7 @@ from detectron2.projects.deeplab import add_deeplab_config
 from detectron2.modeling import build_model
 from detectron2.checkpoint import DetectionCheckpointer
 
-# Ensure the Mask2Former folder is in your path
+# Append the Mask2Former folder
 sys.path.append("./Mask2Former")
 from mask2former import add_maskformer2_config
 
