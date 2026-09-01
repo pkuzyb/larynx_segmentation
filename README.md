@@ -85,7 +85,7 @@ If you use this repository in your research, please cite:
 
 ```bibtex
 @inproceedings{zhang2026larynx,
-  author={Zhang, Yubin and Shi, Xuan and Huang, Kevin and Kumar, Prakash and Lee, Kevin and Goldstein, Louis and Krsina, Nayak and Narayanan, Shrikanth},
+  author={Zhang, Yubin and Shi, Xuan and Huang, Kevin and Kumar, Prakash and Lee, Kevin and Goldstein, Louis and Krishna, Nayak and Narayanan, Shrikanth},
   title     = {Larynx segmentation in mid-sagittal speech production real-time MRI},
   booktitle = {Proceedings of Interspeech},
   year      = {2026}
