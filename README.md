@@ -93,6 +93,6 @@ If you use this repository in your research, please cite:
   doi       = {10.21437/Interspeech.2026-1402}
 }
 ```
-[![DOI](https://zenodo.org)](https://doi.org)
+[![DOI](https://shields.io)](https://doi.org)
 
 ---
