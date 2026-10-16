@@ -85,10 +85,12 @@ If you use this repository in your research, please cite:
 
 ```bibtex
 @inproceedings{zhang2026larynx,
-  author={Zhang, Yubin and Shi, Xuan and Huang, Kevin and Kumar, Prakash and Lee, Kevin and Goldstein, Louis and Krishna, Nayak and Narayanan, Shrikanth},
-  title     = {Larynx segmentation in mid-sagittal speech production real-time MRI},
+  author    = {Zhang, Yubin and Shi, Xuan Palluel and Huang, Kevin and Kumar, Prakash and Lee, Kevin and Goldstein, Louis and Nayak, Krishna and Narayanan, Shrikanth},
+  title     = {Larynx segmentation in mid-sagittal speech production real-time {MRI}},
   booktitle = {Proceedings of Interspeech},
-  year      = {2026}
+  pages     = {554--559},
+  year      = {2026},
+  doi       = {10.21437/Interspeech.2026-1402}
 }
 ```
 [![DOI](https://zenodo.org/badge/1273795365.svg)](https://doi.org/10.5281/zenodo.20767833)
