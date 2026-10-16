@@ -88,7 +88,7 @@ If you use this repository in your research, please cite:
   author    = {Zhang, Yubin and Shi, Xuan Palluel and Huang, Kevin and Kumar, Prakash and Lee, Kevin and Goldstein, Louis and Nayak, Krishna and Narayanan, Shrikanth},
   title     = {Larynx segmentation in mid-sagittal speech production real-time {MRI}},
   booktitle = {Proceedings of Interspeech},
-  pages     = {554--559},
+  pages     = {554-559},
   year      = {2026},
   doi       = {10.21437/Interspeech.2026-1402}
 }
