@@ -92,7 +92,7 @@ If you use this repository in your research, please cite:
   year      = {2026},
   doi       = {10.21437/Interspeech.2026-1402}
 }
-```
-[![DOI](https://shields.io)](https://doi.org)
 
+```
+[![DOI](https://zenodo.org/badge/1273795365.svg)](https://doi.org/10.5281/zenodo.20767833)
 ---
