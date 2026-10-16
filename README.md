@@ -94,5 +94,5 @@ If you use this repository in your research, please cite:
 }
 
 ```
-[![DOI](https://zenodo.org/badge/1273795365.svg)](https://doi.org/10.5281/zenodo.20767833)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20767833.svg)](https://doi.org/10.5281/zenodo.20767833)
 ---
